@@ -1,24 +1,12 @@
-//
-//  ContentView.swift
-//  Apple Sign In
-//
-//  Created by Md Khorshed Alam on 8/9/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("log_status") private var logStatus: Bool = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if logStatus {
+            Home()
+        } else {
+            LogIn()
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
